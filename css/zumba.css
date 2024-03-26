@@ -1,0 +1,911 @@
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color:rgb(247, 243, 246);
+    text-align:center;
+    font-family: 'M+ Type-1 (general-j) Regular';
+    
+}
+h1{
+    color:rgb(0, 0, 0);
+    font-size:100px;
+    text-align:center;
+    padding-top:20px;
+}
+h2{
+    font-size:40px;
+    
+}
+p{
+    font-size:20px;
+}
+img{
+    max-width:100%;
+    height:auto;
+}
+
+.sub{
+    font-size:30px;
+    margin-top:-80px;
+}
+.topnav{
+    
+    background-color:rgba(214, 139, 129, 0.945);
+    position:fixed;
+    width:100%;
+    height:80px;
+    margin:-70px 0 0 0;
+    z-index:1000;
+    display:flex;
+    text-align:right;
+    font-family:cursive;
+    
+}
+.topnav-nav{
+    margin-right:0;
+    padding-top:15px;
+    width:100%;
+    font-family: 'M+ Type-1 (general-j) Light';
+}
+.topnav img{
+    width:80px;
+    height:80px;
+    margin-left:70%;
+    margin-right:0;
+}
+nav li{
+    display:inline;
+    padding-right:7%;
+    text-align:bottom;
+    font-size:25px;
+    font-weight:bold;
+    list-style-type:none;
+}
+nav a:link{
+    color:black;
+    text-decoration:none;
+}
+nav a:visited{
+    color:black;
+    text-decoration:none;
+    
+}
+nav a:hover{
+    color:rgb(0, 0, 0);
+    border-bottom:2px solid rgb(26, 24, 23);
+    text-decoration:none;
+}
+nav a:active{
+    color:#5898bd;
+}
+
+.top-img{
+    width:100%;
+    max-width:1600px;
+    height:700px;
+    margin:0 auto;
+}
+
+.top-img img{
+    width:100%;
+    height:700px;
+    text-align:center;
+    object-fit: cover;
+}
+img .slide2 .slide3{
+    display:none;
+}
+/*スライドショー*/
+    .header {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        background-color: black;
+        color: white;
+        text-align: center;
+    }
+    /* メイン表示領域の設定 */
+    .main-contents {
+        width: 100%;
+        margin: 0 auto;
+    }
+    /* スライドショー領域の設定 */
+    .slide-area {
+        position: relative;
+        margin-top: 1rem;
+    }
+
+    /* 各スライドの設定 */
+    .slide-area .slide-contents {
+        display: none;
+        position: absolute;
+        width: 100%;
+        left:0;
+    }
+
+/*News*/
+.new1{
+border: 3px solid rgb(214, 139, 129);
+margin:50px 10% 50px 10%;
+}
+.New {
+background-color:rgb(247, 243, 246);
+margin-right:30%;
+margin-left:30%;
+margin-top:-20px;
+}
+
+/*ZUMBAとは*/
+.description{
+    padding-bottom:50px;
+}
+.description h2{
+    margin-bottom:50px;
+}
+.description img{
+    height:400px;
+    margin-bottom:-80px;
+}
+/*ZUMBAの魅力*/
+.surc{
+    width:100%;
+    height:80px;
+    background:linear-gradient(to top right, transparent 50%,rgb(247, 243, 246) 50%, rgb(247, 243, 246)) top left/ 50% 100% no-repeat,
+	linear-gradient(to top left, transparent 50%,rgb(247, 243, 246) 50%, rgb(247, 243, 246)) top right / 50% 100% no-repeat;
+    margin-top:-70px;
+}
+.surc2{
+    width:100%;
+    height:80px;
+    background:linear-gradient(to bottom right, transparent 50%,rgb(247, 243, 246) 50%) top left,
+	linear-gradient(to bottom left, transparent 50%,rgb(247, 243, 246) 50%) top right;
+    margin-top:-80px;
+}
+.merit{
+    padding-bottom:200px;
+    padding-top:70px;
+    background-color:rgb(214, 139, 129);
+    background-image:radial-gradient(rgb(247, 243, 246) 30%, transparent 90%),
+    radial-gradient(rgb(217,226,83) 30%, transparent 90%);
+
+}
+.merit-big{
+    background-color:rgb(247, 243, 246);
+    margin-right:10%;
+    margin-left:10%;
+    height:auto;
+}
+
+.merit-1{
+    display:flex;
+    line-height:40px;
+    padding:30px;
+    margin-top:100px;
+    justify-content: center;
+}
+.merit-1-1{
+    margin:0px 50px 70px 50px;
+    width:40%;
+}
+
+.merit-1 h3{
+    font-size:25px;
+    margin-top:80px;
+}
+.merit-img{
+    width:300px;
+    height:300px;
+    background-position:center;
+    margin-top:30px;
+}
+.merit-img img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
+}
+.photo1{
+    display:none;
+}
+.photo1-div{
+    display:none;
+}
+
+/*インストラクター紹介*/
+.instractor{
+    margin:50px 20px 0 10px;
+    padding-bottom:70px;
+    border:3px solid rgb(214, 139, 129);
+}
+.instractor h2{
+    background-color: rgb(214, 139, 129);
+    margin-top:0px;
+}
+.face-photo{
+    display:inline-block;
+
+}
+.introduction{
+    display:inline-block;
+    width:50%;
+    vertical-align:top;
+    line-height:40px;
+}
+.face-photo{
+    position:relative;
+    width:300px;
+    border-radius:50%;
+}
+.face-photo:before{
+    content:"";
+    display:block;
+    padding-top:100%;
+}
+.face-photo img{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    margin:auto;
+    object-fit:cover;
+    object-position:top;
+    border-radius:50%;
+}
+
+/*スケジュール*/
+.lesson{
+    background-color:rgb(214, 139, 129);
+    background-image:radial-gradient(rgb(247, 243, 246) 30%, transparent 90%),
+    radial-gradient(rgb(217,226,83) 30%, transparent 90%);
+    padding-bottom:50px;
+    padding-top:90px;
+    margin-top:40px;
+    margin-right:0;
+    margin-left:0;
+}
+.lessonsmall{
+    margin-right:5%;
+    margin-left:5%;
+}
+
+.schedule1{
+    border-collapse: collapse;
+    margin-right:auto;
+    margin-left:auto;
+    width:60%;
+    margin-top:70px;
+    
+}
+.schedule1 caption{
+    font-size:50px;
+}
+
+.schedule1 tr, .schedule1 th, .schedule1 td{
+    border: 3px solid rgb(214, 139, 129);
+    padding:30px;
+    text-align:center;
+    height:70px;
+    font-size:30px;
+    background-color: rgb(247, 243, 246);
+
+}
+.schedule2{
+        border-collapse: collapse;
+        margin-right:auto;
+        margin-left:auto;
+        width:60%;
+        margin-top:70px;
+        margin-bottom:70px;
+        
+        
+    }
+.schedule2 caption{
+        font-size:50px;
+    }
+    
+.schedule2 tr, .schedule2 th, .schedule2 td{
+        border: 3px solid rgb(214, 139, 129);
+        padding:20px 10px 20px 10px;
+        text-align:center;
+        font-size:30px;
+        background-color: rgb(247, 243, 246);
+        height:50px;
+}
+.schedule2 td{
+width:50%;
+text-align:center;
+}
+.blue{
+    color:rgb(55, 0, 255);
+}
+
+
+.lesson h2{
+    margin-top:80px;
+}
+.lesson h3{
+    font-weight:bold;
+    font-size:30px;
+    border-bottom:2px solid black;
+    margin-right:30%;
+    margin-left:30%;
+}
+.lesson-nissin{
+    margin-top:100px;
+    margin-bottom:100px;
+}
+.lesson-toukai{
+    margin-top:30px;
+    margin-bottom:100px;
+}
+
+.surc3{
+    width:100%;
+    height:80px;
+    background:linear-gradient(to top right, transparent 50%,rgb(247, 243, 246) 50%, rgb(247, 243, 246)) top left/ 50% 100% no-repeat,
+	linear-gradient(to top left, transparent 50%,rgb(247, 243, 246) 50%, rgb(247, 243, 246)) top right / 50% 100% no-repeat;
+    margin-top:-90px;
+}
+.surc4{
+    width:100%;
+    height:80px;
+    background:linear-gradient(to bottom right, transparent 50%,rgb(247, 243, 246) 50%) top left,
+	linear-gradient(to bottom left, transparent 50%,rgb(247, 243, 246) 50%) top right;
+    margin-bottom:-70px;
+}
+.smallp{
+    font-size:14px;
+}
+.bigp{
+    font-size:20px;
+    font-weight:bold;
+}
+.kesu{
+    text-decoration:line-through;
+}
+.tibi{
+    font-size:16px;
+    color:red;
+    font-weight:bold;
+}
+.big{
+    color:red;
+    font-size:18px;
+    font-weight:bold;
+}
+/*お問い合わせ*/
+
+.question h2{
+    background-color:none;
+    margin-right:30%;
+    margin-left:30%;
+    font-size:30px;
+    margin-bottom:120px;
+}
+.question img{
+    width:200px;
+}
+.question a:link{
+    opacity:1;
+}
+.question a:visited{
+    opacity:1;
+}
+.question a:hover{
+    opacity:0.5;
+    width:150px;
+}
+.question a:active{
+    opacity:0.2;
+}
+.renraku p{
+    margin-bottom:-10px;
+}
+.toukai p{
+    font-size:14px;
+}
+
+
+.doup{
+    font-size:30px;
+    font-weight:bold;
+    width:200px;
+    height:100px;
+    margin-top:100px;
+    margin-right:50%;
+    margin-left:50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    line-height:90px;
+    margin-bottom:30px;
+}
+
+
+.doup a:link{
+    color:black;
+    text-decoration:none;
+}
+.doup a:visited{
+    color:black;
+    text-decoration:none;
+    
+}
+.doup a:hover{
+    color:rgb(31, 40, 173);
+    text-decoration:none;
+}
+.doup a:active{
+    color:rgb(31, 40, 173);
+    border-bottom: 3px solid rgb(31, 40, 173);
+}
+.copyright{
+    font-size:5px;
+    font-family:sans-serif;
+}
+/*スケジュールページ*/
+.suke1{
+    background-color:rgb(214, 139, 129);
+    background-image:radial-gradient(rgb(247, 243, 246) 30%, transparent 90%),
+    radial-gradient(rgb(217,226,83) 30%, transparent 90%);
+    margin-top:-50px;
+    margin-bottom:-50px;
+    padding-bottom:40px;
+}
+.suke1 h2{
+    padding-top:100px;
+}
+.suke-place{
+    font-size:20px;
+}
+.doup2{
+    font-size:30px;
+    font-weight:bold;
+    width:200px;
+    height:100px;
+    margin-right:50%;
+    margin-left:50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    line-height:90px;
+    margin-bottom:30px;
+
+}
+
+.doup2 a:link{
+    color:black;
+    text-decoration:none;
+}
+.doup2 a:visited{
+    color:black;
+    text-decoration:none;
+    
+}
+.doup2 a:hover{
+    color:rgb(31, 40, 173);
+    text-decoration:none;
+}
+.doup2 a:active{
+    border-bottom: 3px solid rgb(31, 40, 173);
+}
+.red{
+    color: red;
+}
+/*9月のみ削除*/
+.batu1{
+    content:"";
+    width:56%;
+    height:2px;
+    background-color: red;
+    position:absolute;
+    top:416px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  
+}
+.batu2{
+    content:"";
+    width:56%;
+    height:2px;
+    background-color: red;
+    position:absolute;
+    top:550px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  
+}
+.batu3{
+    content:"";
+    width:56%;
+    height:2px;
+    background-color: red;
+    position:absolute;
+    top:684px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  
+}
+.mo_only{
+    display: none;
+}
+.ibent{
+    font-size:20px;
+    font-weight:bold;
+}
+/*スマホ向け画面*/
+@media screen and (max-width:767px){
+
+    /*全体*/
+    body{
+        margin:0 8px;
+        font-size:14px
+    }
+    h1{
+        font-size:50px; 
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+    h2{
+        font-size:30px;
+        padding-top:10px;
+        padding-bottom:10px;
+    } 
+    p{
+        font-size:17px;
+    }  
+    .sub{
+        margin-top:0;
+        font-size:20px;
+    }
+    .slideshow-slides img{
+        height:300px;
+    } 
+    .new1{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    .top-p{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .top-img{
+        width:100%;
+        height:250px;
+    }
+    .top-img img{
+        width:100%;
+        height:100%;
+    }
+    .main-contents{
+        margin-bottom:250px;
+    }
+.mo_only{
+    display: block;
+}
+    /*ナビ*/
+
+    .topnav img{
+        display:none;
+    }
+    .topnav{
+        width:0px;
+        height:0px;
+    }
+    /*ハンバーガーメニュー*/
+    #g-nav{
+        /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+        position:fixed;
+        z-index: 999;
+        /*ナビのスタート位置と形状*/
+        top:0;
+        left: -120%;
+        width:70%;
+        height: 100vh;/*ナビの高さ*/
+        background:rgb(214, 139, 129);
+        /*動き*/
+        transition: all 0.6s;
+    }
+    
+    /*アクティブクラスがついたら位置を0に*/
+    #g-nav.panelactive{
+        left: 0;
+    }
+    /*ナビゲーション*/
+#g-nav ul {
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+/*リストのレイアウト設定*/
+
+#g-nav li{
+	list-style: none;
+    text-align: center; 
+}
+
+#g-nav li a{
+	color: #333;
+	text-decoration: none;
+	padding:10px;
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+}
+
+/*========= ボタンのためのCSS ===============*/
+.openbtn1{
+	position:fixed;
+    z-index: 9999;/*ボタンを最前面に*/
+	top:10px;
+	left: 10px;
+	cursor: pointer;
+    width: 50px;
+    height:50px;
+}
+	
+/*×に変化*/	
+.openbtn1 span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+	background-color: #666;
+  	width: 45%;
+  }
+
+.openbtn1 span:nth-of-type(1) {
+	top:15px;	
+}
+
+.openbtn1 span:nth-of-type(2) {
+	top:23px;
+}
+
+.openbtn1 span:nth-of-type(3) {
+	top:31px;
+}
+
+.openbtn1.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn1.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.openbtn1.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+
+.new1{
+    margin-top:-200px;
+}
+.kuro {
+    width:100%;
+    height:auto;
+    }
+    .kuro img{
+        width:100%;
+        height:100%;
+        object-fit: cover;
+    }
+
+    /*ズンバの魅力*/
+    
+    .about{
+        background-color: rgb(214, 139, 129);
+    }
+        
+
+    .merit{
+        margin-top:30px;
+        padding-top:40px;
+        width:100%;
+        padding:30px 0 150px 0;
+        margin-right:0;
+        margin-left:0;
+        background-image:radial-gradient(rgb(247, 243, 246) 30%, transparent 90%),
+    radial-gradient(rgb(217,226,83) 30%, transparent 90%);
+
+    }
+.merit-1{
+        display:block;
+        margin-right:0;
+        margin-left:0;
+        background-color:transparent;
+        margin-bottom:150px;
+
+}
+
+
+.merit-img{
+    margin-right:auto;
+    margin-left:auto;
+    height:250px;
+    width:100%;
+}
+
+
+.merit-img img{
+    border-radius: 0%;
+    width:100%;
+}
+.photo2{
+    display:none;
+}
+.photo2-div{
+    display:none;
+}
+.photo1-div{
+    display:block;
+}
+
+.photo1{
+    display:block;
+}
+.merit-big{
+    background-color:transparent ;
+    margin-right:0;
+    margin-left:0;
+    height:400px;
+}
+.merit-1-1{
+    width:100%;
+    margin-top:-70px;
+    margin-bottom:70px;
+    margin-right:0;
+    margin-left:0;
+} 
+.merit{
+    padding-bottom:250px;
+}
+.merit h2{
+    margin-bottom:-100px;
+}
+.merit h3{
+    font-size:20px;
+    font-weight:bold;
+}
+.surc{
+    width:100%;
+    height:80px;
+    background:linear-gradient(to top right, transparent 50%,rgb(247, 243, 246) 50%, rgb(247, 243, 246)) top left/ 50% 100% no-repeat,
+	linear-gradient(to top left, transparent 50%,rgb(247, 243, 246) 50%, rgb(247, 243, 246)) top right / 50% 100% no-repeat;
+    margin-top:-30px;
+}
+.surc2{
+    width:100%;
+    height:80px;
+    background:linear-gradient(to bottom right, transparent 50%,rgb(247, 243, 246) 50%) top left,
+	linear-gradient(to bottom left, transparent 50%,rgb(247, 243, 246) 50%) top right;
+    margin-top:-50px;
+}
+.surc3{
+        margin-top:-60px;
+    }
+
+/*インストラクター紹介*/
+.instractor{
+    margin:50px 5% 0 5%;
+    padding-bottom:70px;
+    border:3px solid rgb(214, 139, 129);
+}
+.introduction{
+    display:inline-block;
+    width:90%;
+    vertical-align:top;
+    margin-top:50px;
+}
+.sikaku{
+    margin-top:40px;
+}
+/*スケジュール*/
+.lesson{
+    padding-top:60px;
+}
+.lesson-nissin .lesson-toukai{
+    margin-right: 20%;
+    margin-left: 20%;
+}
+.lessonsmall{
+    margin-right:5%;
+    margin-left:5%;
+}
+.lesson h2{
+    margin-bottom:0; 
+    margin-top:40px;
+}
+.lesson h3{
+    font-weight:bold;
+    font-size:25px;
+    border-bottom:2px solid black;
+    margin-right:5%;
+    margin-left:5%;
+}
+.schedule1{
+    border-collapse: collapse;
+    margin-right:auto;
+    margin-left:auto;
+    width:90%;
+    margin-top:50px;
+}
+.schedule1 caption{
+    font-size:40px;
+}
+.schedule1 tr, .schedule1 th, .schedule1 td{
+    font-size:20px;
+}
+.schedule2{
+        border-collapse: collapse;
+        margin-right:auto;
+        margin-left:auto;
+        width:90%;
+        margin-top:70px;
+        margin-bottom:70px;  
+    }
+.schedule2 caption{
+    font-size:40px;
+}  
+.schedule2 tr, .schedule2 th, .schedule2 td{
+        font-size:20px;
+}
+
+
+/*お問い合わせ*/
+.question h2 {
+margin-right:10%;
+    margin-left:10%;
+}
+.doup{
+    width:60px;
+    height:60px;
+    font-size:20px;
+    border-radius: 50%;
+    line-height:60px;
+}
+.question{
+    margin-right:5%;
+    margin-left:5%;
+}
+/*9月のみ削除*/
+.batu1{
+    display:none;
+  
+}
+.batu2{
+    display:none;
+  
+}
+.batu3{
+    display:none;
+}
+.no{
+    display:none;
+}
+.ibent{
+    font-size:14px;
+    font-weight:bold;
+}
+}
