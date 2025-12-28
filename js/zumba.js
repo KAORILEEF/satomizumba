@@ -27,15 +27,6 @@
 
     /* スライド変化にかける時間を保持する変数 */
     var durationSlideFade = 1000;
-    // ドット
-var $dotArea = $(".slide-dots");
-
-for(var i = 0; i < slideNum; i++){
-  $dotArea.append("<span></span>");
-}
-
-var $dots = $dotArea.find("span");
-$dots.eq(0).addClass("active");
 
 
     /* --- 初期設定パート --- */
@@ -50,17 +41,12 @@ $dots.eq(0).addClass("active");
     /* --- 関数定義パート --- */
 
     /* 次のスライドを表示する */
-function showNextSlide(){
-  var nextSlide = (nowSlide + 1) % slideNum;
+    function showNextSlide(){
+        var nextSlide = (nowSlide + 1) % slideNum;
+        
+        $slideContents.eq(nowSlide).fadeOut(durationSlideFade);//imgから今の番号を取得して1000ミリ秒でフェードアウト
+        $slideContents.eq(nextSlide).fadeIn(durationSlideFade);//imgから次の番号を取得して1000ミリ秒でフェードイン
 
-  $slideContents.eq(nowSlide).fadeOut(durationSlideFade);
-  $slideContents.eq(nextSlide).fadeIn(durationSlideFade);
-
-  // ★ ドット制御
-  $dots.removeClass("active");
-  $dots.eq(nextSlide).addClass("active");
-
-  nowSlide = nextSlide;
-}
-
+        nowSlide = nextSlide;//次の番号を今の番号にする
+    }
 });
