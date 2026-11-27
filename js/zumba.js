@@ -12,41 +12,62 @@
       $("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
   });
 
-  //時間で変わるスライドショー
-  $(function(){
-    /* --- 変数宣言パート --- */
-
-    /* スライド画像部分を保持する変数//varは変数宣言//div内からimgのクラス名を探す */
-    var $slideContents = $(".slide-area").find(".slide-contents");//.find()関数　配列の検索：配列内に指定した値と一致する値があればそれを取得
-
-    /* スライドの枚数を保持する変数 */
-    var slideNum = $slideContents.length;//lengthは、主に文字列の長さや配列の要素数を取得
-
-    /* 現在表示しているスライド番号を保持する変数 */
-    var nowSlide = 0;
-
-    /* スライド変化にかける時間を保持する変数 */
-    var durationSlideFade = 1000;
-
-
-    /* --- 初期設定パート --- */
-
-    /* 最初のスライドを表示させる//.eq()番号を入れて特定の値を取得する//HTML要素.fadeIn( 時間（省略可能） ); */
-    $slideContents.eq(nowSlide).fadeIn(durationSlideFade);//imgの中から現在表示しているスライド番号を取得、フェードイン
-
-    /* タイマーをスタートさせる */
-    setInterval(showNextSlide, 5000);//setInterval…5000ミリ秒ごとにshowNextSlide関数の処理を繰り返す
-
-
-    /* --- 関数定義パート --- */
-
-    /* 次のスライドを表示する */
-    function showNextSlide(){
-        var nextSlide = (nowSlide + 1) % slideNum;
-        
-        $slideContents.eq(nowSlide).fadeOut(durationSlideFade);//imgから今の番号を取得して1000ミリ秒でフェードアウト
-        $slideContents.eq(nextSlide).fadeIn(durationSlideFade);//imgから次の番号を取得して1000ミリ秒でフェードイン
-
-        nowSlide = nextSlide;//次の番号を今の番号にする
+  // 写真スライダー
+(function () {
+    const area = document.querySelector('.slide-area');
+    const dots = document.querySelector('.slide-dots');
+    if (!area || !dots) return;
+    const slides = Array.from(area.querySelectorAll('.slide-contents'));
+    if (!slides.length) return;
+    let current = 0, timer, start = null;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const buttons = slides.map((slide, i) => {
+        slide.draggable = false;
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.setAttribute('aria-label', `写真 ${i + 1} を表示`);
+        button.addEventListener('click', () => { show(i); restart(); });
+        dots.appendChild(button);
+        return button;
+    });
+    function show(index) {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('is-active', i === current);
+            slide.setAttribute('aria-hidden', String(i !== current));
+            buttons[i].setAttribute('aria-current', String(i === current));
+        });
     }
-});
+    function restart() {
+        clearInterval(timer);
+        if (slides.length > 1 && !reduced.matches && !document.hidden)
+            timer = setInterval(() => show(current + 1), 5000);
+    }
+    area.addEventListener('pointerdown', e => {
+        if (!e.isPrimary || e.button !== 0) return;
+        start = { x: e.clientX, y: e.clientY, id: e.pointerId };
+        clearInterval(timer);
+        area.setPointerCapture(e.pointerId);
+    });
+    area.addEventListener('pointerup', e => {
+        if (!start || start.id !== e.pointerId) return;
+        const dx = e.clientX - start.x, dy = e.clientY - start.y;
+        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy))
+            show(current + (dx < 0 ? 1 : -1));
+        start = null;
+        restart();
+    });
+    area.addEventListener('pointercancel', () => { start = null; restart(); });
+    area.addEventListener('lostpointercapture', () => { if (start) { start = null; restart(); } });
+    area.addEventListener('keydown', e => {
+        if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+        e.preventDefault();
+        show(current + (e.key === 'ArrowRight' ? 1 : -1));
+        restart();
+    });
+    document.addEventListener('visibilitychange', restart);
+    if (reduced.addEventListener) reduced.addEventListener('change', restart);
+    show(0);
+    area.classList.add('is-ready');
+    restart();
+})();
